@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 
 export default function AddUser() {
-    const { firstName, setFirstName, lastName, setLastName, email, setEmail, department, setDepartment, id, setId, handleAddUser, resetUserFields, handleToast } = useContext(DataContext);
+    const { firstName, setFirstName, lastName, setLastName, email, setEmail, department, setDepartment, id, setId, handleAddUser, resetUserFields, handleToast, handleNavigation } = useContext(DataContext);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -48,7 +48,7 @@ export default function AddUser() {
                 </div>
 
                 <div className="flex items-center justify-end mt-6 gap-x-6">
-                    <Link to={"/dashboard"} type="button" className="font-semibold text-white text-sm/6">
+                    <Link to={"/"} type="button" className="font-semibold text-white text-sm/6" onClick={() => handleNavigation(1)}>
                         Cancel
                     </Link>
                     <button

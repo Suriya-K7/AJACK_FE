@@ -23,7 +23,7 @@ export const DataProvider = ({ children }) => {
     const [type, setType] = useState("");
 
     const [navigation, setNavigation] = useState([
-        { id: 1, name: 'Dashboard', href: '/dashboard', icon: HomeIcon, current: true },
+        { id: 1, name: 'Dashboard', href: '/', icon: HomeIcon, current: true },
         { id: 2, name: 'Add User', href: '/adduser', icon: UsersIcon, current: false },
     ]);
 
@@ -114,7 +114,7 @@ export const DataProvider = ({ children }) => {
 
             setUserData(prev => [...prev, response.data.data]);
 
-            navigate("/dashboard");
+            navigate("/");
 
             resetUserFields();
 
@@ -164,7 +164,7 @@ export const DataProvider = ({ children }) => {
 
             await resetToast();
 
-            navigate("/dashboard");
+            navigate("/");
 
             resetUserFields();
 

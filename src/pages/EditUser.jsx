@@ -45,7 +45,7 @@ export default function EditUser() {
                 </div>
 
                 <div className="flex items-center justify-end mt-6 gap-x-6">
-                    <Link to={"/dashboard"} type="button" className="font-semibold text-white text-sm/6"
+                    <Link to={"/"} type="button" className="font-semibold text-white text-sm/6"
                         onClick={resetUserFields}>
                         Cancel
                     </Link>
