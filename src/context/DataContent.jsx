@@ -30,6 +30,7 @@ export const DataProvider = ({ children }) => {
     const [sidebarOpen, setSidebarOpen] = useState(false);
 
     const handleNavigation = (id) => {
+        setSidebarOpen(false);
         setNavigation(navigation.map((nav) => (nav.id === id ? { ...nav, current: true } : { ...nav, current: false })));
     };
 
