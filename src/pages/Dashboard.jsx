@@ -27,7 +27,7 @@ export default function Dashboard() {
     return (
         <AppLayout>
             <ul role="list" className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-                {!userData && userData.map((person, index) => (
+                {userData && userData.map((person, index) => (
                     <li key={index} className="col-span-1 bg-gray-300 divide-y divide-gray-200 rounded-lg shadow cursor-pointer hover:shadow-sm hover:shadow-white">
                         <div className="flex items-center justify-between w-full gap-6 p-6 pb-3 ">
                             <div className="flex flex-col flex-1 gap-1 truncate">
@@ -68,7 +68,7 @@ export default function Dashboard() {
                 ))}
             </ul>
             {
-                userData && <div className="flex items-center justify-center w-full mx-auto">
+                !userData && <div className="flex items-center justify-center w-full mx-auto">
                     <div className="text-center">
                         {/* Icon */}
                         <div className="flex items-center justify-center mb-6">
