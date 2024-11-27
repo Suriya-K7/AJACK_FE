@@ -3,6 +3,7 @@ import AppLayout from "layout/AppLayout";
 import { useContext, useEffect } from "react";
 import DataContext from "../context/DataContent";
 import { Link } from "react-router-dom";
+import RegexPatterns from "utils/Regex";
 
 
 
@@ -13,6 +14,10 @@ export default function AddUser() {
         e.preventDefault();
         if (!firstName.trim() || !lastName.trim() || !email.trim() || !department.trim() || !id.trim()) {
             handleToast("All fileds are mandatory", "warning");
+            return;
+        }
+        if (!RegexPatterns.EMAIL.test(email)) {
+            handleToast("Please enter a valid email", "warning");
             return;
         }
         const data = {

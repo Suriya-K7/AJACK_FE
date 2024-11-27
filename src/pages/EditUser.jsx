@@ -3,6 +3,7 @@ import { useContext, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import DataContext from "../context/DataContent";
 import InputField from "components/InputField";
+import RegexPatterns from "utils/Regex";
 
 
 
@@ -17,9 +18,11 @@ export default function EditUser() {
             handleToast("All fileds are mandatory", "warning");
             return;
         }
-
+        if (!RegexPatterns.EMAIL.test(email)) {
+            handleToast("Please enter a valid email", "warning");
+            return;
+        }
         handleUpdateUser(dataId);
-
     };
 
     useEffect(() => {
