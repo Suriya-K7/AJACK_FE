@@ -9,7 +9,6 @@ const InputField = ({ label, id, type, placeholder, value, onChange, flag }) => 
                     id={id}
                     name={id}
                     type={type}
-                    autoComplete="given-name"
                     placeholder={placeholder}
                     value={value}
                     required
